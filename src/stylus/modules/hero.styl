@@ -1,0 +1,38 @@
+.hero
+    background $primary
+    color white
+
+    &__title
+        font-size 2.5rem
+        line-height 1.2
+        margin-top 0
+        margin-bottom 1rem
+
+    &__text
+        color white
+        font-size 1.25rem
+        margin 0 auto
+        max-width 40rem
+        
+        
+// desktop view
+@media(min-width 992px)
+    
+    .hero
+        height 24rem
+        
+        &__content
+            position relative
+            top 50%
+            transform translateY(-50%)
+                
+        &__title
+            font-size 2.75rem
+                
+// large screens
+@media(min-width 1200px)
+    
+    .hero
+        
+        &__title
+            font-size 3rem    

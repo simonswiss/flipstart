@@ -1,0 +1,22 @@
+block vars
+    - var currentPage = false
+
+doctype html
+html(lang='en')
+
+    //- load the head partial
+    include _head
+    
+    body
+        
+        block bodyBlock
+
+            //- this block can be extended on a per-page basis! 
+            h2 Hi! How about setting some content on the bodyBlock block for this page?
+            p To do so, you can write the following in your Jade template:
+            pre
+                block extend bodyBlock
+                    h2 This is my new body block content!
+
+        //- load the scripts in the footer
+        include _footerScripts

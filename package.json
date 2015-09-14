@@ -1,0 +1,25 @@
+{
+  "name": "flipstart",
+  "version": "1.0.0",
+  "description": "A starting point composed of Jade, Stylus, Gulp and BrowserSync, with a touch of BEM methodology for good measure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ThemeFlip",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap-styl": "^4.0.5",
+    "browser-sync": "^2.9.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-if": "^1.2.5",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.6",
+    "gulp-uglify": "^1.4.1",
+    "gulp-useref": "^1.3.0"
+  }
+}
