@@ -36,4 +36,4 @@ Most Bootstrap CSS and JS modules are disabled by default - un-comment them to a
 
 ### Feedback Welcome!
 
-We certainly don't pretend to have the golden solution with FlipStart. We are welcoming any sort of feedback on how to improve the kit. Feel free to reach out should you have any questions or recommendations!
+We certainly don't pretend that FlipStart is teh silver bullet of front-end devleopment. We are openly welcoming any sort of feedback on how to improve the kit. Should you have any questions or recommendations, please reach out!
