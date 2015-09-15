@@ -1,4 +1,4 @@
-## FlipStart - A clean start with Bootstrap, Jade, Stylus & BrowserSync!
+# FlipStart.
 
 FlipStart was created by the team at ThemeFlip to kickstart new front-end projects.
 
