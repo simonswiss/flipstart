@@ -113,11 +113,15 @@ gulp.task('deployHTML', ['deployClean'], function() {
 });
 
 gulp.task('deployAssets', ['deployHTML'], function() {
+    // images folder
     gulp.src(PATHS.deploy.img)
         .pipe(gulp.dest(PATHS.build + '/assets/img'))
-
-     gulp.src(PATHS.bootstrap.fonts)
+    // bootstrap fonts 
+    gulp.src(PATHS.bootstrap.fonts)
         .pipe(gulp.dest(PATHS.build + '/assets/fonts'))
+    // favicon
+    gulp.src(PATHS.src + '/favicon.ico')
+        .pipe(gulp.dest(PATHS.build))
 });
 
 gulp.task('build', ['deployAssets']);
