@@ -1,21 +1,20 @@
-// jQuery (necessary for Bootstrap's JavaScript plugins)
-script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+- var nodePath = '/node_modules'
+- var bsPath = '/node_modules/bootstrap-styl/js'
 
-// build:js ./assets/js/all.min.js
-//- script(src='./scripts/bootstrap/affix.js')
-//- script(src='./scripts/bootstrap/alert.js')
-//- script(src='./scripts/bootstrap/button.js')
-//- script(src='./scripts/bootstrap/carousel.js')
-//- script(src='./scripts/bootstrap/collapse.js')
-//- script(src='./scripts/bootstrap/dropdown.js')
-//- script(src='./scripts/bootstrap/modal.js')
-//- script(src='./scripts/bootstrap/scrollspy.js')
-//- script(src='./scripts/bootstrap/tab.js')
-//- script(src='./scripts/bootstrap/tooltip.js')
-//- script(src='./scripts/bootstrap/transition.js')
-//- script(src='./scripts/bootstrap/popover.js')
-
+// build:js({./,src}) ./assets/js/all.min.js
+script(src='#{nodePath}/jquery/dist/jquery.js')
+//- script(src='#{bsPath}/affix.js')
+//- script(src='#{bsPath}/alert.js')
+//- script(src='#{bsPath}/button.js')
+//- script(src='#{bsPath}/carousel.js')
+//- script(src='#{bsPath}/collapse.js')
+//- script(src='#{bsPath}/dropdown.js')
+//- script(src='#{bsPath}/modal.js')
+//- script(src='#{bsPath}/scrollspy.js')
+//- script(src='#{bsPath}/tab.js')
+//- script(src='#{bsPath}/tooltip.js')
+//- script(src='#{bsPath}/transition.js')
+//- script(src='#{bsPath}/popover.js')
 script(src='./scripts/plugins/jquery.matchHeight-min.js')
-
 script(src='./scripts/init.js')
 // endbuild

@@ -75,23 +75,18 @@ gulp.task('stylus', function () {
 });
 
 
-/* ===== COPY ======= */
-
-gulp.task('copy', function () {
-    gulp.src(PATHS.bootstrap.fonts)
-        .pipe(gulp.dest(PATHS.src + '/assets/fonts'))
-
-    gulp.src(PATHS.bootstrap.js)
-        .pipe(gulp.dest(PATHS.src + '/scripts/bootstrap'))   
-});
-
-
 /* ========================= */
 /* ===== DEFAULT TASK ===== */
 /* ======================= */
 
-gulp.task('default', ['jade', 'stylus', 'copy'], function() {
-    browserSync({ server: { baseDir: './src' } });
+gulp.task('default', ['jade', 'stylus'], function() {
+    browserSync({ 
+        server: { 
+            baseDir: ['./', './src'],
+            index: './src/index.html',
+            routes: { '/node_modules': 'node_modules' }
+        } 
+    });
     gulp.watch(PATHS.stylus.all, ['stylus'])
     gulp.watch(PATHS.jade.all, ['jade-watch']);
     gulp.watch(PATHS.scripts.init, reload);
