@@ -2,6 +2,7 @@ extends layout/_layout
 
 block vars
     - currentPage = 'index'
+    - pageTitle = '' // if left empty, will output the title set on 'layout/_layout.jade'
         
 block bodyBlock
     include modules/_hero

@@ -1,5 +1,6 @@
 block vars
     - var currentPage = false
+    - var pageTitle = 'FlipStart. Bootstrap, Jade & Stylus Starter Kit'
 
 doctype html
 html(lang='en')
@@ -11,12 +12,14 @@ html(lang='en')
         
         block bodyBlock
 
-            //- this block can be extended on a per-page basis! 
-            h2 Hi! How about setting some content on the bodyBlock block for this page?
-            p To do so, you can write the following in your Jade template:
-            pre
-                block extend bodyBlock
-                    h2 This is my new body block content!
+            .container
+                section.features
+                    .container
+                        .row
+                            .col-md-6.col-md-offset-3
+                                .features__item
+                                    h4.features__heading Jade is Awesome!
+                                    p.features__text This is the default bodyBlock content, set in the layout template.You probably want to override the block in your current page!
 
         //- load the scripts in the footer
         include _footerScripts

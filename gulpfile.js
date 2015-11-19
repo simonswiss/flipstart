@@ -9,10 +9,12 @@ var gulp        = require('gulp'),
     assets      = useref.assets(),
     gulpif      = require('gulp-if'),
     clean       = require('gulp-clean'),
+    
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
 var PATHS = {
+    scripts: 'src/scripts/**/*.js',
     jade: {
         watch: 'src/jade/*.jade',
         all: 'src/jade/**/*.jade'
@@ -20,10 +22,6 @@ var PATHS = {
     stylus: {
         watch: 'src/stylus/style.styl',
         all: 'src/stylus/**/*.styl'
-    },
-    scripts: {
-        init: 'src/scripts/init.js',
-        plugins: 'src/scripts/plugins/*.js'
     },
     bootstrap: {
         fonts: 'node_modules/bootstrap-styl/fonts/**/*.*',
@@ -89,7 +87,7 @@ gulp.task('default', ['jade', 'stylus'], function() {
     });
     gulp.watch(PATHS.stylus.all, ['stylus'])
     gulp.watch(PATHS.jade.all, ['jade-watch']);
-    gulp.watch(PATHS.scripts.init, reload);
+    gulp.watch(PATHS.scripts, reload);
 });
 
 
