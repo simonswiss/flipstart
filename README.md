@@ -27,6 +27,7 @@ Most Bootstrap CSS and JS modules are disabled by default - un-comment them to a
 ### Features
 
 * Jade templates compiled into HTML
+* JSON data object pulled in  with `gulp-data`
 * BEM module structure with separated Jade and Stylus partials
 * Equal height columns with [jquery.matchHeight.js](https://github.com/liabru/jquery-match-height)
 * Stylus styles compiled into CSS
