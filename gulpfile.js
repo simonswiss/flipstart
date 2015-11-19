@@ -1,5 +1,6 @@
 var gulp        = require('gulp'),
     jade        = require('gulp-jade'),
+    data        = require('gulp-data'),
     stylus      = require('gulp-stylus'),
     prefix      = require('gulp-autoprefixer'),
     sourcemaps  = require('gulp-sourcemaps'),
@@ -19,6 +20,7 @@ var PATHS = {
         watch: 'src/jade/*.jade',
         all: 'src/jade/**/*.jade'
     },
+    data: './src/data/data.json',
     stylus: {
         watch: 'src/stylus/style.styl',
         all: 'src/stylus/**/*.styl'
@@ -47,6 +49,9 @@ gulp.task('jade', function () {
 
     return gulp.src(PATHS.jade.watch)
         .pipe(sourcemaps.init())
+        .pipe(data(function(file) {
+            return require(PATHS.data);
+        }))
         .pipe(jade({
             pretty: true
         }))

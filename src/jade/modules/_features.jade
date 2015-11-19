@@ -1,13 +1,11 @@
-- var features = []
-- features.push({ icon: '', heading: 'Jade is awesome.', text: 'Forget closing HTML tags, enjoy great readability. Rock some cool each loops like this one!' })
-- features.push({ icon: '', heading: 'Stylus is great too!', text: 'Once used to the Jade syntax, where indentation replaces nesting, Stylus makes perfect sense!' })
-- features.push({ icon: '', heading: 'BEM makes them BFFs!', text: 'BEM components make Stylus stylesheets super clean & easy to maintain. Jade helps keep it readable!' })
-
 section.features
-    .container
-        .row
-            each feature in features
-                .col-sm-4
-                    .features__item.matchHeight
-                        h4.features__heading #{feature.heading}
-                        p.features__text #{feature.text}
+  .container
+    .row
+      
+      //- features data is store in the `src/data/data.json` file..
+      each feat in features
+        .col-sm-4
+          a.features__link(href="#{feat.url}" target="_blank")
+            .features__item.matchHeight
+              h4.features__heading #{feat.heading}
+              p.features__text #{feat.text}

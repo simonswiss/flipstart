@@ -1,0 +1,19 @@
+{
+  "features" : [
+    {  
+      "heading" : "Jade is awesome.",
+      "url" : "http://jade-lang.com",
+      "text" : "Forget closing HTML tags, enjoy great readability. Rock some cool each loops like this one!" 
+    },
+    {  
+      "heading" : "Stylus is great too!",
+      "url" : "http://learnboost.github.io/stylus",
+      "text": "Once used to the Jade syntax, where indentation replaces nesting, Stylus makes perfect sense!" 
+    },
+    {  
+      "heading" : "BEM makes them BFFs!",
+      "url" : "http://getbem.com/",
+      "text": "BEM components make Stylus stylesheets super clean & easy to maintain. Jade helps keep it readable!" 
+    }
+  ]
+}
