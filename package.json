@@ -1,7 +1,7 @@
 {
   "name": "flipstart",
   "version": "1.0.0",
-  "description": "A starting point composed of Jade, Stylus, Gulp and BrowserSync, with a touch of BEM methodology for good measure.",
+  "description": "A starting point composed of Jade (Pug?), Stylus, Gulp and BrowserSync, with a touch of BEM methodology for good measure.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

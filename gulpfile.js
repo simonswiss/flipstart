@@ -15,26 +15,26 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload;
 
 var PATHS = {
-    scripts: 'src/scripts/**/*.js',
-    jade: {
-        watch: 'src/jade/*.jade',
-        all: 'src/jade/**/*.jade'
-    },
-    data: './src/data/data.json',
-    stylus: {
-        watch: 'src/stylus/style.styl',
-        all: 'src/stylus/**/*.styl'
-    },
-    bootstrap: {
-        fonts: 'node_modules/bootstrap-styl/fonts/**/*.*',
-        js: 'node_modules/bootstrap-styl/js/*.js'
-    },
-    src: 'src',
-    build: 'build',
-    deploy: {
-        html: 'src/*.html',
-        img: 'src/assets/img/**/*.*',
-    }
+  scripts: 'src/scripts/**/*.js',
+  jade: {
+    watch: 'src/jade/*.jade',
+    all: 'src/jade/**/*.jade'
+  },
+  data: './src/data/data.json',
+  stylus: {
+    watch: 'src/stylus/style.styl',
+    all: 'src/stylus/**/*.styl'
+  },
+  bootstrap: {
+    fonts: 'node_modules/bootstrap-styl/fonts/**/*.*',
+    js: 'node_modules/bootstrap-styl/js/*.js'
+  },
+  src: 'src',
+  build: 'build',
+  deploy: {
+    html: 'src/*.html',
+    img: 'src/assets/img/**/*.*',
+  }
 };
 
 
@@ -47,16 +47,16 @@ var PATHS = {
 
 gulp.task('jade', function () {
 
-    return gulp.src(PATHS.jade.watch)
-        .pipe(sourcemaps.init())
-        .pipe(data(function(file) {
-            return require(PATHS.data);
-        }))
-        .pipe(jade({
-            pretty: true
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(PATHS.src))
+  return gulp.src(PATHS.jade.watch)
+    .pipe(sourcemaps.init())
+    .pipe(data(function(file) {
+      return require(PATHS.data);
+    }))
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(PATHS.src))
 });
 
 gulp.task('jade-watch', ['jade'], reload);
@@ -65,16 +65,16 @@ gulp.task('jade-watch', ['jade'], reload);
 /* ===== STYLES ===== */
 
 gulp.task('stylus', function () {
-    gulp.src(PATHS.stylus.watch)
-        .pipe(sourcemaps.init())
-        .pipe(stylus())
-        .pipe(prefix({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(PATHS.src + '/assets/css'))
-        .pipe(reload({stream: true}));
+  gulp.src(PATHS.stylus.watch)
+    .pipe(sourcemaps.init())
+    .pipe(stylus())
+    .pipe(prefix({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(PATHS.src + '/assets/css'))
+    .pipe(reload({stream: true}));
 });
 
 
@@ -83,16 +83,16 @@ gulp.task('stylus', function () {
 /* ======================= */
 
 gulp.task('default', ['jade', 'stylus'], function() {
-    browserSync({ 
-        server: { 
-            baseDir: ['./', './src'],
-            index: './src/index.html',
-            routes: { '/node_modules': 'node_modules' }
-        } 
-    });
-    gulp.watch(PATHS.stylus.all, ['stylus'])
-    gulp.watch(PATHS.jade.all, ['jade-watch']);
-    gulp.watch(PATHS.scripts, reload);
+  browserSync({ 
+    server: { 
+      baseDir: ['./', './src'],
+      index: './src/index.html',
+      routes: { '/node_modules': 'node_modules' }
+    } 
+  });
+  gulp.watch(PATHS.stylus.all, ['stylus'])
+  gulp.watch(PATHS.jade.all, ['jade-watch']);
+  gulp.watch(PATHS.scripts, reload);
 });
 
 
@@ -106,25 +106,25 @@ gulp.task('deployClean', function () {
 });
 
 gulp.task('deployHTML', ['deployClean'], function() {
-    return gulp.src(PATHS.deploy.html)
-        .pipe(assets)
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', minifyCSS()))
-        .pipe(assets.restore())
-        .pipe(useref())
-        .pipe(gulp.dest(PATHS.build));
+  return gulp.src(PATHS.deploy.html)
+    .pipe(assets)
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(gulpif('*.css', minifyCSS()))
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest(PATHS.build));
 });
 
 gulp.task('deployAssets', ['deployHTML'], function() {
-    // images folder
-    gulp.src(PATHS.deploy.img)
-        .pipe(gulp.dest(PATHS.build + '/assets/img'))
-    // bootstrap fonts 
-    gulp.src(PATHS.bootstrap.fonts)
-        .pipe(gulp.dest(PATHS.build + '/assets/fonts'))
-    // favicon
-    gulp.src(PATHS.src + '/favicon.ico')
-        .pipe(gulp.dest(PATHS.build))
+  // images folder
+  gulp.src(PATHS.deploy.img)
+    .pipe(gulp.dest(PATHS.build + '/assets/img'))
+  // bootstrap fonts 
+  gulp.src(PATHS.bootstrap.fonts)
+    .pipe(gulp.dest(PATHS.build + '/assets/fonts'))
+  // favicon
+  gulp.src(PATHS.src + '/favicon.ico')
+    .pipe(gulp.dest(PATHS.build))
 });
 
 gulp.task('build', ['deployAssets']);

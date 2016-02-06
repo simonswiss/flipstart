@@ -2,7 +2,7 @@
 
 FlipStart was created by the team at ThemeFlip to kickstart new front-end projects.
 
-The setup embraces the modularity of Jade, Stylus and BEM to provide a simple, clean starting point.
+The setup embraces the modularity of Jade (Pug?), Stylus and BEM to provide a simple, clean starting point.
 
 FlipStart does not pretend to be the ultimate solution for any project. It does a good job for us at providing a simple structure to build upon. Feel free to clone it or fork it if you find a good use for it too!
 
@@ -26,7 +26,7 @@ Most Bootstrap CSS and JS modules are disabled by default - un-comment them to a
 
 ### Features
 
-* Jade templates compiled into HTML
+* Jade (Pug?) templates compiled into HTML
 * JSON data object pulled in  with `gulp-data`
 * BEM module structure with separated Jade and Stylus partials
 * Equal height columns with [jquery.matchHeight.js](https://github.com/liabru/jquery-match-height)
